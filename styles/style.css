@@ -6,12 +6,13 @@ body {
 	-ms-user-select: none;
 	user-select: none;
 	display: flex;
+	
+	width: 1920px;
+	height: 1080px;
 }
 
 .side {
-	margin-top: 7%;
-	min-width: 50%;
-	min-height: 100%;
+	width: 50%;
 }
 
 #left_side {
@@ -21,7 +22,7 @@ body {
 }
 
 #right_side {
-	max-height: 800px;
+	max-height: 80%;
 }
 
 #phone_area {
@@ -31,8 +32,8 @@ body {
 	background-size: contain;
 	background-repeat: no-repeat;
 	background-position: 50%;
-	width: 100%;
-	min-height: 800px;
+	width: 960px;
+	height: 800px;
 }
 
 #phone_wallpaper {
@@ -41,7 +42,6 @@ body {
 	width: 20%;
 	height:auto;
 	left: 15%;
-	top:20%;
 	filter:brightness(75%);
 }
 
