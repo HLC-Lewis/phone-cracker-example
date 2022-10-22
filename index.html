@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+		<link rel="preload" href="https://pro.fontawesome.com/releases/v5.15.2/css/all.css" as="style"/>
+		<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.15.2/css/all.css"/>
+		<link rel="stylesheet" href="styles/style.css">
+
+		<title>Phone Cracker</title>
+	</head>
+	<body>
+		
+		<section id="left_side" class="side">
+			<center>
+				<div id="mode_buttons">
+					<button ONCLICK="set_mode()" class="mode_button" role="button">MODE: <span id="phone_mode">NORMAL</span></button>
+					<button ONCLICK="set_mode('reset')" class="mode_button" role="button">RESET</button>
+					<button ONCLICK="scroll_console()" class="mode_button" role="button">SCROLL</button>
+					<button ONCLICK="start_cracking()" class="mode_button" role="button">START CRACKING</button>
+				</div>
+				<div id="phone_area">
+					<img src="images/phone_wallpaper.png" id="phone_wallpaper">
+
+					<div id="phone_upper">
+						<i class="fas fa-lock" style="font-size:200%;"></i><br><br>
+						<p>Enter Passcode</p>
+						<div id="passcode_circles">
+							&nbsp;
+						</div>
+					</div>
+					<div id="phone_keys">
+						<div ONCLICK="press_key('1')"><p>1<span></span></p></div>
+						<div ONCLICK="press_key('2')"><p>2<span>ABC</span></p></div>
+						<div ONCLICK="press_key('3')"><p>3<span>DEF</span></p></div>
+
+						<div ONCLICK="press_key('4')"><p>4<span>GHI</span></p></div>
+						<div ONCLICK="press_key('5')"><p>5<span>JKL</span></p></div>
+						<div ONCLICK="press_key('6')"><p>6<span>MNO</span></p></div>
+
+						<div ONCLICK="press_key('7')"><p>7<span>PQRS</span></p></div>
+						<div ONCLICK="press_key('8')"><p>8<span>TUV</span></p></div>
+						<div ONCLICK="press_key('9')"><p>9<span>WXYZ</span></p></div>
+
+						<div style="visibility: hidden;"><p>2<span>ABC</span></p></div>
+						<div ONCLICK="press_key('0')"><p>0<span></span></p></div>
+						<div style="visibility: hidden;"><p>2<span>ABC</span></p></div>
+					</div>
+				</div>
+			</center>
+		</section>
+		<section id="right_side" class="side">
+			<h3 id="debug_info"></h3>
+			<div id="console"></div>
+		</section>
+
+		<script src="scripts/script.js"></script>
+	</body>
+</html>

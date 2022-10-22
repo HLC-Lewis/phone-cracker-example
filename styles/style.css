@@ -1,0 +1,134 @@
+body {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+
+	display: flex;
+}
+
+.side {
+	margin-top: 7%;
+	min-width: 50%;
+	min-height: 100%;
+}
+
+#left_side {
+	color: white;
+	font-family: Verdana, sans-serif;
+}
+
+#right_side {
+	max-height: 800px;
+}
+
+#phone_area {
+	float: left;
+	margin-top: 2%;
+	background: url('../images/phone_background.png');
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: 50%;
+	width: 100%;
+	min-height: 800px;
+}
+
+#phone_wallpaper {
+	position:absolute;
+	z-index:-5;
+	width: 20%;
+	height:auto;
+	left: 15%;
+	top:20%;
+	filter:brightness(75%);
+}
+
+#phone_upper {
+	position: relative;
+	margin-top: 9%;
+	margin-bottom: 5%;
+}
+
+
+#phone_keys {
+	display: flex;
+	flex-wrap: wrap;
+	max-width: 30%;
+}
+
+#phone_keys > div {
+	border-radius: 50%;
+	background-color: rgba(255,255,255,0.4);
+	width: 75px;
+	height: 75px;
+	margin: 3%;
+	text-align: center;
+	line-height: 1;
+	font-size: 150%;
+	text-shadow: 0px 0px 3px black;
+}
+
+#phone_keys > div > p > span {
+	text-align: center;
+	font-size: 50%;
+	display: block;
+}
+
+#phone_keys > div:HOVER {
+	background-color: rgba(255,255,255,0.7);
+	box-shadow: 2px 2px 2px rgba(0,0,0,0.5);
+}
+
+#console {
+	background: black;
+	width: 96%;
+	height: 100%;
+	padding: 2%;
+	color: #00ff44;
+	line-height: 0;
+	overflow-y: auto;
+}
+
+/* Button */
+.mode_button {
+	align-self: center;
+	background-color: #fff;
+	background-image: none;
+	background-position: 0 90%;
+	background-repeat: repeat no-repeat;
+	background-size: 4px 3px;
+	border-radius: 15px 225px 255px 15px 15px 255px 225px 15px;
+	border-style: solid;
+	border-width: 2px;
+	box-shadow: rgba(0, 0, 0, .2) 15px 28px 25px -18px;
+	box-sizing: border-box;
+	color: #41403e;
+	cursor: pointer;
+	display: inline-block;
+	font-family: Neucha, sans-serif;
+	font-size: 1rem;
+	font-weight: 600;
+	line-height: 23px;
+	outline: none;
+	padding: .75rem;
+	text-decoration: none;
+	transition: all 235ms ease-in-out;
+	border-bottom-left-radius: 15px 255px;
+	border-bottom-right-radius: 225px 15px;
+	border-top-left-radius: 255px 15px;
+	border-top-right-radius: 15px 225px;
+	user-select: none;
+	-webkit-user-select: none;
+	touch-action: manipulation;
+}
+
+.mode_button:hover {
+	box-shadow: rgba(0, 0, 0, .3) 2px 8px 8px -5px;
+	transform: translate3d(0, 2px, 0);
+}
+
+.mode_button:focus {
+	box-shadow: rgba(0, 0, 0, .3) 2px 8px 4px -6px;
+}
