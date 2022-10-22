@@ -1,8 +1,6 @@
 let phone_mode = "normal"
 let set_keycode = ""
 
-let last_found
-
 function set_mode(force) {
 	if (force) phone_mode = force
 
@@ -15,6 +13,7 @@ function set_mode(force) {
 			break;
 		case "reset":
 			phone_mode = "normal"
+			lock_icon("fas fa-lock")
 			set_keycode = ""
 			document.getElementById('passcode_circles').innerHTML = "&nbsp;"
 			document.getElementById('console').innerHTML = "Resetting Phone & Log..."
@@ -59,31 +58,22 @@ function start_cracking() {
 	let found_passcode = false
 	let current_counter = 0
 
-	if (last_found && last_found == find_value) current_counter = last_found - 500
-
 	while (true) { // For true "bruteforce-ness"
-		current_counter++
-
-		send_to_console('normal', 'Checking passcode: ' + current_counter)
-
 		if (find_value == current_counter) {
 			found_passcode = true
 			break
 		}
 
-		if (current_counter > 1000 && !found_passcode && !auto_set) {
-			auto_set = true
-			current_counter = find_value - (find_value.toString().length * 100)
-		}
+		current_counter++
 	}
 
 	let delta = Date.now() - start_time
 	if (found_passcode) {
 		send_to_console('success', "Unlocked the device with passcode: " + current_counter)
-		last_found = find_value
-		unlock_device()
+		lock_icon("fas fa-lock-open")
 	} else {
 		send_to_console('success', "Was unable to unlock the device: " + current_counter)
+		lock_icon("fas fa-lock")
 	}
 
 	send_to_console('success', "Computation Time: " + delta / 1000 + " seconds")
@@ -106,8 +96,9 @@ function send_to_console(type, message) {
 	}
 }
 
-function unlock_device() {
-	
+function lock_icon(icn) {
+	var lock_icon = document.getElementById('lock_icon')
+	lock_icon.classList = icn
 }
 
 function scroll_console() {
