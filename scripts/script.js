@@ -12,11 +12,7 @@ function set_mode(force) {
 			phone_mode = "normal"
 			break;
 		case "reset":
-			phone_mode = "normal"
-			lock_icon("fas fa-lock")
-			set_keycode = ""
-			document.getElementById('passcode_circles').innerHTML = "&nbsp;"
-			document.getElementById('console').innerHTML = "Resetting Phone & Log..."
+			location.reload();
 			break;
 	}
 
@@ -38,7 +34,6 @@ function press_key(digit_pressed) {
 				'<i class="far fa-circle"></i> '
 
 			set_keycode += digit_pressed
-
 			break;
 	}
 }
@@ -52,6 +47,11 @@ function start_cracking() {
 	let start_time = Date.now();
 	let find_value = parseInt(set_keycode)
 	let auto_set = false
+
+	if (find_value.toString().length > 10) {
+		send_to_console("error", "Keycode is too long for the typical phone.")
+		return
+	}
 
 	send_to_console('normal', 'Starting Search...')
 
